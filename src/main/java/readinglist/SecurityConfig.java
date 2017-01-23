@@ -23,14 +23,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-		.antMatchers("/")
-		.access("hasRole('READER')")
-		.antMatchers("/**").permitAll()
+			.antMatchers("/").access("hasRole('READER')")
+			.antMatchers("/**").permitAll()
+			
 		.and()
+		
 		.formLogin()
 		//It also designates /login as the path for the login page as well as the login failure page
 		.loginPage("/login")
 		.failureUrl("/login?error=true");
+		// CSRF (Cross Site Request Forgery) error
+		// Ja dodao da izbegnem: Invalid CSRF Token 'null' was found on the request parameter '_csrf' or header 'X-CSRF-TOKEN'
+		http.csrf().disable();
 	}
 
 	// We’re going to authenticate users against the database via JPA by setting a custom user details service
