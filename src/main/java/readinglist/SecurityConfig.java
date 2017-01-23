@@ -2,6 +2,7 @@ package readinglist;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -21,9 +22,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	// mapped to) require an authenticated user with the READER role
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http
-		.authorizeRequests()
-		.antMatchers("/").access("hasRole('READER')")
+		http.authorizeRequests()
+		.antMatchers("/")
+		.access("hasRole('READER')")
 		.antMatchers("/**").permitAll()
 		.and()
 		.formLogin()
