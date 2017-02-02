@@ -46,6 +46,7 @@ public class ReadingListController {
 	}
 	
 //	// TASK!!!!!!
+	// In this way when removing book with isbn you have to load this url http://localhost:8080/readingList/{reader}/{isbn} in the browser and then book is removed
 	@RequestMapping(value="/{reader}/{isbn}", method=RequestMethod.GET)
 	public String removeFromReadingList(@PathVariable("isbn") String isbn) {
 		
