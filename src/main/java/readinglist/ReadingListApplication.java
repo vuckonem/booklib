@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 // WOW
 //u browseru otvaras: http://localhost:8080/readingList/pera
-@SpringBootApplication	//Enable component-scanning and auto configuration
+@SpringBootApplication	//Enable component-scanning and auto configuration (bootstraping)
 public class ReadingListApplication {
 
 	public static void main(String[] args) {
