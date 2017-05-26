@@ -10,6 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+/*Reader class is a simple JPA entity type with a few fields to capture the username, password, and full name of the user*/
 @Entity
 public class Reader implements UserDetails {
 	private static final long serialVersionUID = 1L;
