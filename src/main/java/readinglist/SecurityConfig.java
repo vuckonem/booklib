@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.loginPage("/login")
 		.failureUrl("/login?error=true");
 		// CSRF (Cross Site Request Forgery) error
-		// Ja dodao da izbegnem: Invalid CSRF Token 'null' was found on the request parameter '_csrf' or header 'X-CSRF-TOKEN'
+		// To avoid:  Invalid CSRF Token 'null' was found on the request parameter '_csrf' or header 'X-CSRF-TOKEN'
 		http.csrf().disable();
 	}
 
